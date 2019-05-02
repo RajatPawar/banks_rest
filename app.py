@@ -3,7 +3,7 @@ from sqlalchemy import Table, Column, Integer, String, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 engine = create_engine('postgres://localhost/fyle', echo=True)
 Base = declarative_base(engine)
@@ -36,7 +36,7 @@ def loadSession():
     session = Session()
     return session
 
-@app.route("/ifsc", methods=['GET'])
+@application.route("/ifsc", methods=['GET'])
 def return_bank_details():
      bank_ifsc = request.args.get("ifsc")
      if bank_ifsc:
@@ -46,7 +46,7 @@ def return_bank_details():
              return render_template('bank_details.html', result = result)
      return "ERROR: No such bank found!"
 
-@app.route("/getbanks", methods=['GET'])
+@application.route("/getbanks", methods=['GET'])
 def return_banks():
      bank_name = request.args.get("bank")
      city = request.args.get("city")
@@ -59,5 +59,5 @@ def return_banks():
      return "ERROR: No such banks found!"
 
 if __name__ == "__main__":
-     app.run(port=5000)
+     application.run()
 
