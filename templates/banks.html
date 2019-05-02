@@ -1,0 +1,26 @@
+ <html>
+ <head>
+     <title>All banks</title>
+ </head>
+ <body>
+     <h1>All banks matching the criteria are:</h1>
+     <br/>
+     <hr>
+     <br>
+    
+     {% for row in result: %}
+     <br>
+     <b>Bank name:</b> {{ row['bank_name'] }}<br>
+     <b>Bank address:</b>  {{ row['address'] }}<br>
+     <b>Bank city:</b>  {{ row['city'] }}<br>
+     <b>Bank state:</b>  {{ row['state'] }}<br>
+     <b>Bank district:</b>  {{ row['district'] }}<br>
+     <b>Bank branch:</b>  {{ row['branch'] }}<br>
+     <b>Bank IFSC:</b>  {{ row['ifsc'] }}<br>
+     <b>Bank ID:</b> {{ row['bank_id'] }}<br>
+     <br>
+     <hr>
+     {% endfor %}
+ </body>
+ </html>
+
