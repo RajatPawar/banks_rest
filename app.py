@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 
 application = Flask(__name__)
 
-engine = create_engine('postgres://localhost/fyle', echo=True)
+engine = create_engine('postgres://siagfnrgwjkkzy:793ca781975fda6951d8633a89b778b99a0106c2a4160e522a538bb888dde26d@ec2-54-235-167-210.compute-1.amazonaws.com:5432/dbdl723nqsshmo', echo=True)
 Base = declarative_base(engine)
 
 class Bank(Base):
